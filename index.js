@@ -68,15 +68,18 @@ function getCardString(card) {
     return card.value + " of " + card.suit;
 }
 
-function showStatus() {
-    if (!gameStarted) {
-        textArea.innerText = 'Welcome to BlackJack!'
-        return;
-    }
-
-}
-
-function getNextCard () {
+function getNextCard() {
     return deck.shift();
 }
+
+function showStatus() {
+    if (!gameStarted) {
+        textArea.innerText = 'Welcome to BlackJack!';
+        return;
+    }
+    for (let i = 0; i < deck.length; i++) {
+        textArea.innerText += '\n' + getCardString(deck[i]);
+    }
+}
+
 // ========================================
